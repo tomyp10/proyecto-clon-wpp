@@ -26,13 +26,15 @@ body {
 }
 
 .app {
-    background-color: rgb(255, 255, 255);
+    max-width: 1100px;
+    background-color:var(--grey-800);
     margin: auto;
     display: grid;
     grid-template-columns: 320px 1fr;
     border-radius: 20px;
     height: 90vh;
     overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* aside styles */
@@ -96,8 +98,6 @@ aside header {
 
 .search {
     background-color: #141e25;
-    /* display: flex;
-    justify-content: center; */
     padding: 10px;
 }
 
@@ -128,7 +128,7 @@ input[type="search"]::placeholder {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;   
+    gap: 10px;
 }
 
 .user-chat {
@@ -179,9 +179,9 @@ input[type="search"]::placeholder {
 /* messages styles */
 
 .chat-panel {
-display: flex;
-flex-direction: column;
-min-height: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .messages {
@@ -194,11 +194,12 @@ min-height: 0;
 }
 
 .message {
-    background-color: var(--grey-300);
+    background-color: var(--grey-900);
+    color: white;
     border-radius: 10px;
     padding: 10px;
     width: 60%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.238);
+    box-shadow: 0 2px 6px rgba(46, 46, 46, 0.238);
 }
 
 .message .time {
@@ -211,6 +212,78 @@ min-height: 0;
 .me {
     align-self: end;
     background-color: var(--green-100);
+    color: black;
 }
 
-footer {background-color: green;}
+/* footer styles */
+
+footer {
+    background-color: var(--grey-900);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+footer button {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+}
+
+footer svg {
+    width: 100%;
+    height: 100%;
+}
+
+footer .attach {
+    background-color: transparent;
+    border: none;
+    color: var(--grey-600);
+    cursor: pointer;
+    transition: color .2s;
+}
+
+footer .attach:hover {
+    color: var(--grey-200);
+}
+
+footer form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+footer textarea {
+    background-color: var(--grey-800);
+    width: 100%;
+    padding: 8px;
+    border-radius: 15px;
+    resize: none;
+    border: none;
+    caret-color: var(--green-300);
+    color: white;
+}
+
+form textarea[type="text"]::placeholder {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+footer .send {
+    background-color: #2dca7a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 45px;
+    height: 32px;
+    padding: 5px;
+    transition: all .1s;
+    cursor: pointer;
+}
+
+footer .send:hover {
+    background-color: #138b80;
+    transform: scale(0.98);
+}
