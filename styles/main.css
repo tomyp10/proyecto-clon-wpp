@@ -288,6 +288,8 @@ footer .send:hover {
     transform: scale(0.98);
 }
 
+/* responsive */
+
 @media (max-width:880px) {
     .app {
         grid-template-columns: 1fr;
